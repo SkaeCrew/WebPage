@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.btn-contact-me{
+    @apply text-white px-5 py-2.5 rounded-md mx-5 transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600;
+}
+.menu-item{
+    @apply lg:mx-2 lg:my-0 my-2 hover:text-gray-300  transition duration-300 ease-in-out;
+}
