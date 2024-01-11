@@ -8,47 +8,71 @@
     <link rel="icon" href="../public/img/logo_vertical.png" type="image type"></link>
     <script src="script.js"></script>
 </head>
-<body class="">
+<body class="bg-gray-800">
     <section id="navbar">
             <nav id="nav" class="bg-gray-700 py-3 relative">
                 <div class="container mx-auto flex content-between justify-between items-center px-8 lg:px-0">
-                    <a href="#"><img src="../public/img/logo_horizontal.png"  class="w-auto h-16 transition ease-in-out duration-300 hover:scale-110"></a>
+                    <a href="#"><img src="../public/img/logo_horizontal.png"  class=" w-auto h-16 transition ease-in-out duration-300 hover:scale-110"></a>
                     <div class="flex lg:hidden">
                         <img src="../public/img/menu_icon.png" class="w-auto h-6 cursor-pointer" onclick="openMenu()">
                     </div>
                     <div id="menu" class="text-white lg:mx-3 lg:flex lg:relative lg:top-0 lg:w-auto lg:left-auto lg:-translate-x-2 lg:bg-transparent absolute top-20 w-full left-0 bg-gray-700 -translate-x-full transition ease-in-out duration-200">
                         <div class=" flex items-center lg:flex-row flex-col w-full ">
-                            <a class="menu-item" href="#">About me</a>
-                            <a class="menu-item" href="#">My proyects</a>
-                            <a class="menu-item" href="#">Education</a>
+                            <a class="menu-item" href="#about-me">About me</a>
+                            <a class="menu-item" href="#">My work</a>
                             <a class="menu-item" href="#">Knowledge</a>                        
                         </div>
                         <div class="flex items-center justify-between lg:flex-row lg:mt-0 flex-col mt-2 ">
                             <a href="#" class="btn-contact-me text-center lg:w-32  w-full  ">Contact me</a>
                         </div>
                     </div>
-                    
                 </div>
-                
             </nav>
     </section>
     <section id="hero-section">
-        <h1 class=" text-center">Hey! I'm Stevens Acha</h1>
-        <h2>Full Stack developer</h2>
+        <div class="text-white flex justify-center text-center flex-col mt-48">
+            <h1 class=" text-6xl ">Welcome to SkaeDev</h1>
+            <h2 class="text-xl">Nothing is too much when it comes about dreams</h2>
+            <div class="mt-16 ">
+                <button href="#" class="text-center rounded-md px-5 py-2.5 w-auto hover:scale-110 transition duration-150 ease-in-out bg-blue-500 hover:bg-blue-600">Let's make it real</button>          
+            </div>
+        </div>
     </section>
     <section id="about-me">
-
+        <div class="flex flex-col">
+            <div class="flex flex-row justify-around mt-40 ">
+                <div class="text-center flex justify-center items-center text-white px-32">
+                    <p class=" text-lg">I'm Stevens, a Software Engineering Student from the Peruvian University of Applied Sciences. 
+                        I'm always willing to learn and work with various technologies. I'm convinced that everything can be done as long as you imagine it possible.</p>
+                </div>
+                <div class="flex justify-center min-w-72 mx-20 items-center">
+                    <img class="w-52 h-auto min-w-52 mx-20" src="../public/img/me.jpeg">
+                </div>
+            </div>
+            <div class="mt-16 text-white text-center">
+                <h2 class="text-2xl">Things that makes me myself</h2>
+            </div>
+            <div class="flex flex-row justify-around my-16 text-white text-center">
+                <div class="flex flex-col text-center">
+                    <img src="../public/img/logo_vertical.png" class="w-32">
+                    <h3>Here is my attitude</h3>
+                </div>
+                <div class="flex flex-col">
+                    <img src="../public/img/logo_vertical.png" class="w-32">
+                    <h3>Here is my attitude</h3>
+                </div>
+                <div class="flex flex-col">
+                    <img src="../public/img/logo_vertical.png" class="w-32">
+                    <h3>Here is my attitude</h3>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="my-proyects">
-
-    </section>
-    <section id="education">
+    <section id="my-woeks">
 
     </section>
     <section id="knowledge">
 
     </section>
-    
-    
 </body>
 </html>
