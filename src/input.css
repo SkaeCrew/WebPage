@@ -10,3 +10,15 @@
 .menu-item{
     @apply lg:mx-2 lg:my-0 my-2 hover:text-gray-300  transition duration-500 ease-in-out;
 }
+
+.my-hidden{
+    @apply opacity-0 transition-all filter blur-sm transform -translate-x-40;
+}
+
+.my-show{
+    @apply opacity-100 filter blur-0 transform translate-x-0 duration-700;
+}
+
+.delay-400{
+    transition-delay: 400ms;
+}

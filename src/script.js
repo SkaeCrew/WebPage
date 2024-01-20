@@ -18,3 +18,19 @@ function openMenu(){
         nav.classList.add('bg-gray-700');    
     }
 }
+
+
+const observer = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) =>{
+        console.log(entry)
+        if(entry.isIntersecting){
+            entry.target.classList.add('my-show');
+        } /*else{
+            entry.target.classList.remove('my-show');
+        }*/
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.my-hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
