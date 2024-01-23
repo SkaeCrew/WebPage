@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build-css": "npx tailwindcss -i src/input.css -o public/output.css --watch"
+    "build-css": "npx tailwindcss build -i src/input.css -o public/output.css"
   },
   "author": "Skae",
   "license": "ISC",
