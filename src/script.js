@@ -34,3 +34,94 @@ const observer = new IntersectionObserver((entries) =>{
 const hiddenElements = document.querySelectorAll('.my-hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
+//To recieve messages:
+let message = false;
+
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+
+form.addEventListener('submit', function(e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Please wait..."
+    let name = document.getElementById('name');
+    let nameValue = name.value;
+    let email = document.getElementById('email');
+    let emailValue = email.value;
+    let msg = document.getElementById('message');
+    let msgValue = msg.value;
+    
+    if(nameValue != '' && emailValue != '' && msgValue != ''){
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            console.log(response);
+            result.innerHTML = json.message;
+            result.classList.remove("text-gray-500");
+            result.classList.add("text-green-500");
+            message = true;
+            showToast();
+          } else {
+            console.log(response);
+            result.innerHTML = json.message;
+            result.classList.remove("text-gray-500");
+            result.classList.add("text-red-500");
+            message = false;
+            showToast();
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          result.innerHTML = "Something went wrong!";
+          message = false;
+          showToast();
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+    }
+    else{
+        message = false;
+        showToast();
+    }
+});
+
+
+function getMessage(){
+    return message;
+}
+
+let toastBox = document.getElementById('toastBox');
+let successMsg = '<i class="fa-solid fa-circle-check" style="color: #ffffff; margin: 0 20px; font-size: 35px;"></i> Successfully submitted!'
+let errorMsg = '<i class="fa-solid fa-circle-xmark" style="color: #ffffff; margin: 0 20px; font-size: 35px;"></i> Not submitted - Please, fill all the fields!'
+
+function showToast(){
+    let toast = document.createElement('div');
+    toast.classList.add('toast');
+    if(message){
+        toast.innerHTML = successMsg;
+    }
+
+    else toast.innerHTML = errorMsg;
+    toastBox.appendChild(toast);
+    setTimeout(() =>{
+        toast.remove();
+    }, 3000)
+}
+

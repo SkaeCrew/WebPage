@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stevens's Curriculum</title>
+    <title>SkaeDev</title>
     <link rel="stylesheet" href="../public/output.css"></link>
     <link rel="icon" href="../public/img/logo_vertical.png" type="image type"></link>
     <script defer src="script.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://kit.fontawesome.com/1592604854.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-800 overflow-x-hidden">
     <section id="navbar">
@@ -162,8 +164,8 @@
                     </div>
                 </div>
                 <div class="inline-block text-white text-center my-hidden delay-200">
-                    <h2 class="text-3xl my-10">I'm always open to different technologies</h2>
-                    <h2 class="text-2xl">So, many other technologies will get into these lists while my career goes on</h2>
+                    <h2 class="text-3xl my-10">I'm always open to learn different technologies</h2>
+                    <h2 class="text-2xl">These are just the ones I'm used to the most</h2>
                 </div>
             </div>
         </div>
@@ -174,26 +176,23 @@
     <section id="contact-me" class="my-hidden">
         <div class="mt-28">
             <div>
-                <h2 class="text-2xl text-center text-white mt-10">Contact me!</h2>
+                <h2 class="text-2xl text-center text-white mt-10">Want to get in touch?</h2>
+                
             </div>
             <div class=" flex flex-row w-full justify-evenly">
                 <div class="flex flex-col m-8">
-                    <div class="text-white h-14">
-                        <h3 class="text-lg">Send me a message, request or suggestion!</h3>
-                    </div>
-                    <div class="flex my-6 relative">
-                        <input id="name" type="text" placeholder="Name" class="min-w-80 border-b focus:outline-none focus:border-white focus:border-b-2 border-gray-400 bg-transparent text-white border-transparent py-1 transition-colors" autocomplete="off"></input>
-                    </div>
-                    <div class="flex my-6 relative">
-                        <input id="emaill" type="text" placeholder="E-maill" class=" min-w-80 border-b focus:outline-none focus:border-white focus:border-b-2 border-gray-400 bg-transparent text-white border-transparent py-1 transition-colors " autocomplete="off"></input>
-    
-                    </div>
-                    <div class="flex my-6 relative">
-                        <textarea placeholder="Message" class=" min-w-80 min-h-56 border-b focus:outline-none focus:border-white focus:border-b-2 border-gray-400 bg-transparent text-white border-transparent py-1 transition-colors "></textarea>
-                    </div>
-                    <div class="mt-4 ">
-                        <button class="text-center text-white rounded-md px-5 py-2.5 w-auto hover:scale-110 transition duration-150 ease-in-out bg-blue-500 hover:bg-blue-600"><a href="#contact-me">Send!</a></button>          
-                    </div>
+                    <h3 class=" text-white h-14 text-lg">Send me a message, request or suggestion!</h3>
+                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                        <input type="hidden" name="access_key" value="d5247c0e-d2c4-4ddb-b17f-47bc64534dda" />
+                        <input type="hidden" name="subject" value="New Submission from your Website" />
+                        <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                        <input id="name" name="name" type="text" placeholder="Name" class="flex my-6 relative min-w-80 border-b focus:outline-none focus:border-white focus:border-b-2 border-gray-400 bg-transparent text-white py-1 transition-colors" autocomplete="off"></input>
+                        <input id="email" name="email" type="email" placeholder="E-mail" class="flex my-6 relative min-w-80 border-b focus:outline-none focus:border-white focus:border-b-2 border-gray-400 bg-transparent text-white py-1 transition-colors " autocomplete="off"></input>
+                        <textarea id="message" name="message" placeholder="Lets make it real..." class="flex my-6 relative min-w-80 min-h-52 border-b focus:outline-none focus:border-white focus:border-b-2 border-gray-400 bg-transparent text-white  py-1 transition-colors "></textarea>
+                        <button type="submit" class="mt-4 text-center text-white rounded-md px-5 py-2.5 w-auto hover:scale-110 transition duration-150 ease-in-out bg-blue-500 hover:bg-blue-600">Submit</button>          
+                        <p class="text-base text-center text-gray-500 hidden" id="result"></p>
+                    </form>
+                    
                 </div>
                 <div class="flex flex-col m-8 max-w-96">
                     <div class="text-white ">
@@ -217,15 +216,47 @@
                         <div class="flex my-3 relative">
                             <svg fill="#ffffff" height="24px" width="24px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd125aef"> <path style="display: inline; fill-rule: evenodd; clip-rule: evenodd;" d="M116.504,500.219V170.654H6.975v329.564H116.504 L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941 C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219 c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533 c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531 c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z"> </path> </g> </g></svg>
                             <a href="https://www.linkedin.com/in/stevens-acha/" class="text-white ml-2">Stevens Kharis Acha Esquerre</a>
-
                         </div>
-
                     </div>
                     
                 </div>
             </div>
         </div>
-        
     </section>
+    <div id="toastBox" class="group fixed flex items-end flex-col overflow-hidden p-5 bottom-5 right-5 text-white">
+    </div>
+    <footer>
+        <div class="bg-gray-700 h-auto w-full">
+            <div class="flex flex-col">
+                <div class="flex flex-row justify-between">
+                    <div class="flex flex-col text-white">
+                        <div class="ml-20 flex flex-col mt-5">
+                            <a href="#"><img src="../public/img/logo_horizontal.png"  class="w-auto h-16"></a>
+                            <a class="menu-item lg:mt-3" href="#about-me">About me</a>
+                            <a class="menu-item lg:mt-3" href="#knowledge">What I know</a>
+                            <a class="menu-item lg:mt-3" href="#my-works">What I've done</a>
+                            <a class="menu-item lg:mt-3" href="#contact-me">Contact me</a> 
+                        </div>
+                    </div>
+                    <div class="flex flex-col ">
+                       <div class="flex flex-col mr-20 h-full justify-center">
+                            <h2 class="text-white text-center text-2xl mt-4"> Social media</h2>
+                            <div class="flex flex-row mt-5 justify-between">
+                                <a href="https://www.facebook.com/hectorstevens.achayupanqui" ><img class="w-6 mr-3" src="../public/img/facebook.png"></a>
+                                <a href="https://www.instagram.com/skaecrack/" ><img class="w-6 mr-3" src="../public/img/instagram.png"></a>
+                                <a href="https://www.linkedin.com/in/stevens-acha/" ><img class="w-6 mr-3" src="../public/img/linkedin.png"></a>
+                            </div>
+                       </div>
+    
+                    </div>
+                </div>
+                <div >
+                    <h3 class="text-white text-center text-lg"> SkaeDev &copy; 2023</h3>
+                    <h3 class="text-white text-center text-lg">SkaeDev is not a official registered company, this is just an example</h3>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
 </body>
 </html>
