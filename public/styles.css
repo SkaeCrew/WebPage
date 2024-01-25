@@ -1086,6 +1086,20 @@ video {
   transition-duration: 700ms;
 }
 
+.animation-scale {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-scale:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .delay-400{
   transition-delay: 400ms;
 }
@@ -1126,6 +1140,65 @@ video {
 @keyframes anim{
   100%{
     width: 0;
+  }
+}
+
+/*GOTOP*/
+
+.go-top-container{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3.3rem;
+  height: 3.3rem;
+}
+
+.go-top-button{
+  animation: popup .3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  transition: .2s;
+  border-radius: 50%;
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity))
+}
+
+.go-top-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.go-top-button i{
+  position: absolute;
+  font-size: 1.7rem;
+  transform: scale(0.5);
+  color: white;
+  transition: .2s;
+}
+
+.my-show-2{
+  z-index: 10;
+}
+
+.my-show-2 .go-top-button{
+  animation: popup .3s ease-in-out;
+  width: 3.3rem;
+  height: 3.3rem;
+  z-index: 11;
+}
+
+.my-show-2 i{
+  transform: scale(0.5);
+}
+
+@keyframes popup{
+  100%{
+    width: 3.3rem;
+    height: 3.3rem;
   }
 }
 
@@ -1219,6 +1292,4 @@ video {
     padding-right: 8rem;
   }
 }
-
-
 

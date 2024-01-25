@@ -125,3 +125,21 @@ function showToast(){
     }, 3000)
 }
 
+
+window.onscroll = function(){
+    if(document.documentElement.scrollTop > 50){
+        document.getElementById('go-top-container').classList.add('go-top-container');
+        document.getElementById('go-top-button').classList.add('go-top-button');
+    }
+    else{
+        document.getElementById('go-top-container').classList.remove('go-top-container');
+        document.getElementById('go-top-button').classList.remove('go-top-button');
+    }
+}
+
+document.getElementById('go-top-button').addEventListener('click', () =>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+})
