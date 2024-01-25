@@ -25,9 +25,7 @@ const observer = new IntersectionObserver((entries) =>{
         console.log(entry)
         if(entry.isIntersecting){
             entry.target.classList.add('my-show');
-        } /*else{
-            entry.target.classList.remove('my-show');
-        }*/
+        } 
     });
 });
 
@@ -109,7 +107,7 @@ function getMessage(){
 
 let toastBox = document.getElementById('toastBox');
 let successMsg = '<i class="fa-solid fa-circle-check" style="color: #ffffff; margin: 0 20px; font-size: 35px;"></i> Successfully submitted!'
-let errorMsg = '<i class="fa-solid fa-circle-xmark" style="color: #ffffff; margin: 0 20px; font-size: 35px;"></i> Not submitted - Please, fill all the fields!'
+let errorMsg = '<i class="fa-solid fa-circle-xmark" style="color: #ffffff; margin: 0 20px; font-size: 35px;"></i> Not submitted - Please, fill all the blanks!'
 
 function showToast(){
     let toast = document.createElement('div');
